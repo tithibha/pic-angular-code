@@ -1,6 +1,6 @@
 # Demo
 
-Run npm install for downloading packages
+Run `npm install` for downloading packages
 
 ## Development server
 
