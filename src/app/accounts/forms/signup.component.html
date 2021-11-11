@@ -1,0 +1,18 @@
+<p>Signup works!</p>
+<form [formGroup]="form" (ngSubmit)="OnSignup()">
+    <p>
+   <label>UserName:</label>
+   <input name="userNameText" formControlName="userName"/>
+   <output *ngIf="form.get('userName')?.invalid">User Name is required</output>
+  </p>
+
+<p>
+  <label>Password:</label>
+  <input name="passwordText" formControlName="password" />
+</p>
+
+<p>
+  <input type="submit" value="Signup" />
+</p>
+
+</form>

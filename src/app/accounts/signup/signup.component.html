@@ -1,0 +1,60 @@
+<form (ngSubmit)="signup(signupForm.form)" #signupForm="ngForm" novalidate>
+<fieldset>
+  <legend>Signup Here </legend>
+  <table>
+    <tr>
+      <td>
+        <label-component [text]='"UserName:"'></label-component>
+      </td>
+      <td>
+        <input name="userNameTextBox" type="text"
+        [(ngModel)]="userName" required #userNameFormControlRef=ngModel  />
+      </td>
+      <td>
+        <div *ngIf="userNameFormControlRef.errors && (userNameFormControlRef.dirty || userNameFormControlRef.touched)">
+          <p *ngIf="userNameFormControlRef.errors.required">UserName is required</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label-component [text]='"Password:"'></label-component>
+      </td>
+      <td>
+        <input name="passwordTextBox"
+          type="password" [(ngModel)]="password"
+          required minlength="8" maxlength="15" #passwordFormControlRef=ngModel />
+      </td>
+      <td>
+        <div *ngIf="passwordFormControlRef.errors && (passwordFormControlRef.dirty || passwordFormControlRef.touched)">
+          <p *ngIf="passwordFormControlRef.errors.required">Password is required</p>
+          <p *ngIf="passwordFormControlRef.errors.minlength">minlength 8</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label-component [text]='"Email:"'></label-component>
+      </td>
+      <td>
+        <input name="emailTextBox"  type="email" [(ngModel)]="email"
+         required  pattern="[^ @]*@[^ @]*" #emailFormControlRef=ngModel />
+      </td>
+      <td>
+        <div *ngIf="emailFormControlRef.errors && (emailFormControlRef.dirty || emailFormControlRef.touched)">
+          <p *ngIf="emailFormControlRef.errors.required">Email is required</p>
+          <p *ngIf="emailFormControlRef.errors.pattern">Email must contain at least the @ character</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" value="Signup"/>
+      </td>
+      <td>
+        <input type="button" value="reset" (click)="clear(signupForm.form)"/>
+      </td>
+    </tr>
+  </table>
+</fieldset>
+</form>
