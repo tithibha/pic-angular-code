@@ -5,6 +5,7 @@ import { BrowserModule} from '@angular/platform-browser'
 import {UtilityModule} from './utility/utility.module'
 import { LayoutModule } from './layout/layout.module';
 import { AccountsModule } from './accounts/accounts.module'
+import { AdminModule } from './admin/admin.module'
 import { FormsModule } from '@angular/forms'
 import { ConsoleLoggerService } from './services/consoleLogger.service'
 import { ApiLoggerService } from './services/apiLogger.service'
@@ -14,7 +15,7 @@ import { ILogger } from './services/ILogger.contract'
 @NgModule({
   declarations:[AppComponent],
   bootstrap:[AppComponent],
-  imports:[BrowserModule,UtilityModule,LayoutModule,AccountsModule],
+  imports:[BrowserModule,UtilityModule,LayoutModule,AccountsModule,AdminModule],
   providers:[
      {provide:ConsoleLoggerService,useClass:ConsoleLoggerService},
     // {provide:"remoteApiAddress",useValue:"http://pic.in/logger/service"}
