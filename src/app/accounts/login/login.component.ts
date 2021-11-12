@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit,EventEmitter ,Output} from '@angular/core';
 import { ApiLoggerService } from 'src/app/services/apiLogger.service';
 import { ILogger } from 'src/app/services/ILogger.contract';
-
+import {Router} from '@angular/router'
 @Component({
   selector: 'login-component',
   templateUrl: './login.component.html',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   password:string=''
   @Output()
   onLogin=new EventEmitter<any>();
-  constructor(@Inject("loggerService") public logger:ILogger) { }
+  constructor(@Inject("loggerService") public logger:ILogger,public router:Router) { }
 
   ngOnInit(): void {
   }
@@ -39,7 +39,8 @@ export class LoginComponent implements OnInit {
   }
   login(){
 
-    this.onLogin.emit({userName:this.userName,password:this.password});
+   // this.onLogin.emit({userName:this.userName,password:this.password});
+   this.router.navigate(["admin",this.userName]);
   }
 
 

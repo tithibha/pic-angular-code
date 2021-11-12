@@ -5,7 +5,7 @@ import { UsersDetailsComponent } from './users-details/users-details.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { UtilityModule } from '../utility/utility.module';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UtilityModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports:[AdminPanelComponent]
 })

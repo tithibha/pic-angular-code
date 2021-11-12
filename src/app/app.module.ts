@@ -9,13 +9,15 @@ import { AdminModule } from './admin/admin.module'
 import { FormsModule } from '@angular/forms'
 import { ConsoleLoggerService } from './services/consoleLogger.service'
 import { ApiLoggerService } from './services/apiLogger.service'
-import { ILogger } from './services/ILogger.contract'
+import { ILogger } from './services/ILogger.contract';
+import { HomeComponent } from './home/home.component'
+import { AppRoutingModule } from './app.routing.module'
 
 
 @NgModule({
-  declarations:[AppComponent],
+  declarations:[AppComponent, HomeComponent],
   bootstrap:[AppComponent],
-  imports:[BrowserModule,UtilityModule,LayoutModule,AccountsModule,AdminModule],
+  imports:[BrowserModule,UtilityModule,LayoutModule,AccountsModule,AdminModule,AppRoutingModule],
   providers:[
      {provide:ConsoleLoggerService,useClass:ConsoleLoggerService},
     // {provide:"remoteApiAddress",useValue:"http://pic.in/logger/service"}
