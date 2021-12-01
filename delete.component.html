@@ -1,0 +1,13 @@
+<form (ngSubmit)="delete(deleteForm.form)" #deleteForm="ngForm" novalidate>
+    <fieldset>
+      <legend>Remove user </legend>
+<table>   
+    <tr>
+        <app-search (callParent)="getMsgFromBaby($event)"></app-search>
+    </tr>
+    <tr>
+        <input type="submit" value="Delete">
+    </tr>
+</table>
+</fieldset></form>
+    
