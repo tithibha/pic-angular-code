@@ -1,0 +1,44 @@
+  <div class="card highlight-card card-small">
+    <span>Welcome To Philips User Management </span>
+  </div>
+<table >
+  
+  <tr>
+    <td>
+      <tr>
+        <a  class="card" rel="noopener" routerLink='./create' >
+          <span>Create User</span>          
+        </a>    
+      </tr>
+      <tr>
+        <a class="card" rel="noopener" routerLink='./users'>
+          <span>User List</span>          
+        </a>
+      </tr>
+      <tr>
+        <a class="card" rel="noopener" routerLink='./delete'>
+          <span>Delete User</span>          
+        </a>
+      </tr>
+      <tr>
+        <a class="card" rel="noopener" routerLink='./update'>
+          <span>Update User</span>          
+        </a>
+      </tr>
+      <tr>
+        <a  class="card" rel="noopener" routerLink='./search'>
+          <span>View User</span>          
+        </a>
+      </tr>      
+    </td>
+    <td>
+        <router-outlet></router-outlet>
+    </td>
+  </tr> 
+  <tr>
+    <users-details-component></users-details-component>
+  </tr>
+  <tr>
+    <input type="button" value="LogOut" (click)="OnLogout()"/>
+  </tr>
+</table>
