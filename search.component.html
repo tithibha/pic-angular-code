@@ -1,0 +1,34 @@
+<table>
+      
+    <tr>
+      <app-searchbox (callSearchView)="getMsgFromsearchbox($event)"></app-searchbox>          
+    </tr>
+    <tr>
+      <td>
+        <app-label-component [text]='"User Name:"'></app-label-component>
+      </td>
+      <td>
+        {{user.userName}}
+      </td>  
+    </tr>
+    <tr>
+      <td>
+        <app-label-component [text]='"Password:"'></app-label-component>
+      </td>
+      <td>
+        {{user.password}}
+      </td>          
+    </tr>
+    <tr>
+      <td>
+        <app-label-component [text]='"Email:"'></app-label-component>
+      </td>
+      <td>
+        {{user.email}}
+      </td>          
+    </tr>     
+           
+      </table>
+    
+  
+  
