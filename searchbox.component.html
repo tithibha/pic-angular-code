@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td>
+            <app-label-component [text]='"Select user"'></app-label-component>
+        </td>
+        <td>
+            <select (change)="search($event)" >
+              <option>Select user</option>
+                <option  *ngFor="let user of userList">{{user.userName}}</option>    
+            </select>
+        </td>
+    </tr> 
+</table>
+
